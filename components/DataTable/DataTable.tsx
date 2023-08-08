@@ -23,6 +23,8 @@ const DataTable = ({ prefPopulationList }: Props) => {
     {
       field: "population",
       headerName: "人口（人）",
+      headerAlign: "right",
+      align: "right",
       width: 180,
       sortComparator: (v1, v2) => {
         return commaToNum(v1) - commaToNum(v2);
@@ -31,11 +33,15 @@ const DataTable = ({ prefPopulationList }: Props) => {
     {
       field: "populationDensity",
       headerName: "人口密度（人/km²）",
+      headerAlign: "right",
+      align: "right",
       width: 180,
     },
     {
       field: "populationIncrease",
       headerName: "5年間の人口増減数（人）",
+      headerAlign: "right",
+      align: "right",
       width: 200,
       sortComparator: (v1, v2) => {
         return commaToNum(v1) - commaToNum(v2);
@@ -44,6 +50,8 @@ const DataTable = ({ prefPopulationList }: Props) => {
     {
       field: "populationIncreaseRatio",
       headerName: "5年間の人口増減率（%）",
+      headerAlign: "right",
+      align: "right",
       width: 200,
     },
   ];
@@ -70,8 +78,11 @@ const DataTable = ({ prefPopulationList }: Props) => {
     }
   );
   const style = css`
-    widht: 100%;
+    width: 100%;
     height: 600px;
+    .MuiDataGrid-columnHeaders {
+      background-color: rgba(66, 165, 245, 0.12);
+    }
   `;
 
   return (
